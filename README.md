@@ -63,7 +63,6 @@ type StrictOptions = {
 Your editor can then provide autocomplete and type checking like this
 <img width="494" height="347" alt="화면 캡처 2026-05-03 165906" src="https://github.com/user-attachments/assets/c6b08163-c9fb-4df9-bd4d-5c125d929f6a" />
 
-
 ---
 
 ## Example
@@ -106,9 +105,10 @@ Example:
 src/example/
 ```
 
-### 2. Select a folder & run `Generate Sandpack Files`
+### 2. run `Generate Sandpack Files`
 
 <img width="441" height="92" alt="화면 캡처 2026-05-03 174139" src="https://github.com/user-attachments/assets/a46508e3-f59f-4d52-ab7e-af55d33a84d7" />
+
 use Explorer context menu
 
 or Open Command Palette:
