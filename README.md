@@ -60,7 +60,9 @@ type StrictOptions = {
 };
 ```
 
-Your editor can then provide autocomplete and type checking.
+Your editor can then provide autocomplete and type checking like this
+<img width="494" height="347" alt="화면 캡처 2026-05-03 165906" src="https://github.com/user-attachments/assets/c6b08163-c9fb-4df9-bd4d-5c125d929f6a" />
+
 
 ---
 
@@ -104,25 +106,26 @@ Example:
 src/example/
 ```
 
-### 2. Run command
+### 2. Select a folder & run `Generate Sandpack Files`
 
-Open Command Palette:
+<img width="441" height="92" alt="화면 캡처 2026-05-03 174139" src="https://github.com/user-attachments/assets/a46508e3-f59f-4d52-ab7e-af55d33a84d7" />
+use Explorer context menu
+
+or Open Command Palette:
 
 ```txt
 Generate Sandpack Files
 ```
 
-or use Explorer context menu.
-
 ### 3. Generated output
 
 ```txt
 src/
-├── example/
+├── example/                // target dir
 │   ├── App.tsx
 │   ├── index.ts
 │   └── styles.css
-└── files.for.sandpack.ts
+└── files.for.sandpack.ts   // output
 ```
 
 ---
@@ -180,15 +183,6 @@ const modules = import.meta.glob("./example/*", {
 ```
 
 This object is injected directly into Sandpack.
-
----
-
-## Requirements
-
-- Visual Studio Code
-- Node.js
-- CodeSandbox Sandpack
-- build tool supporting `import.meta.glob` (such as Vite)
 
 ---
 
