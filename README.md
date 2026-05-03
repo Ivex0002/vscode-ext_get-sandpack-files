@@ -12,7 +12,8 @@ It scans your target folder, collects file names, and creates a `files.for.sandp
 
 ---
 
-## webp
+## Usage gif
+<img width="1344" height="728" alt="Honeycam 2026-05-03 17-31-12" src="https://github.com/user-attachments/assets/055e906f-f23b-4e0f-a97a-5f9440dbd0b3" />
 
 ## REQUIREMENT <span style="color:#e11d48; font-size:12px;" >!important</span >
 
