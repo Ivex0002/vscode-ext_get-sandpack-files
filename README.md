@@ -1,11 +1,13 @@
-# get-sandpack-files README
+# get-sandpack-files
 
-A VSCode extension that generates a strongly typed helper & raw file runtime provider(vite) file for `@codesandbox/sandpack-react` from a selected directory.
+A VSCode extension that generates `type-safe Sandpack Option helper` from a selected folder.
 
-It scans your target folder, collects file names, and creates a `files.for.sandpack.ts` file with:
+When it triggered, collect target folder's file names, and create a `files.for.sandpack.ts`
 
-- typed `activeFile`
-- typed `visibleFiles`
+`files.for.sandpack.ts` provides
+
+- type-safe `activeFile`
+- type-safe `visibleFiles`
 - runtime raw file loading via `import.meta.glob`
 - filename autocomplete
 - reduced string typo risk
@@ -16,11 +18,19 @@ It scans your target folder, collects file names, and creates a `files.for.sandp
 
 <img width="1355" height="734" alt="Honeycam 2026-05-04 16-06-02" src="https://github.com/user-attachments/assets/60a98b1d-7323-43f0-8630-9335365b17d4" />
 
-## REQUIREMENT <span style="color:#e11d48; font-size:12px;" >!important</span >
+## REQUIREMENTS ❗
 
 - `@codesandbox/sandpack-react`
 - `react`
 - `vite`
+
+## Installation
+
+Install from VSCode Marketplace:
+
+[![Visual Studio Marketplace](https://img.shields.io/visual-studio-marketplace/v/ivex0002.get-sandpack-files?style=for-the-badge&logo=visualstudiocode&color=0098FF)](https://marketplace.visualstudio.com/items?itemName=ivex0002.get-sandpack-files)
+
+or search: `get-sandpack-files`
 
 ## Why
 
@@ -43,7 +53,7 @@ This approach has a few drawbacks:
 - non-existent files can be referenced
 - refactoring file names is harder to track
 
-~~plz sandpack bros add generic file name union~~
+~~plz sandpack bros add generic for file name union~~
 
 This extension generates a strict filename union type from your actual folder contents:
 
@@ -65,6 +75,19 @@ Your editor can then provide autocomplete and type checking like this
 
 ---
 
+## Notes
+
+This extension does not auto-update generated files.
+
+Generated files are updated only when you run the command.
+
+- ❗ if you `add NEW FILE` or `edit FILE NAME` , trigger once more ❗
+
+- just editing file contents(NOT FILE NAME), triggering is not needed
+  - because `import.meta.glob` is a dynamic import.
+
+---
+
 ## Example
 
 ### Folder
@@ -83,7 +106,7 @@ type FileNames = "/App.tsx" | "/index.ts" | "/styles.css";
 ```
 
 ```ts
-// dirName can changed by user options
+// dirName can be changed by user options
 // "base", "parent", "both"
 // default is "parent"
 // take a look "naming" option
@@ -143,9 +166,9 @@ src/
 ## In your project
 
 ```ts
-import { createSandpackOptions } from "./files.for.sandpack";
+import { SPOptions_dirName } from "./files.for.sandpack";
 
-const sandpackProps = await createSandpackOptions({
+const sandpackProps = await SPOptions_dirName.create({
   options: {
     activeFile: "/App.tsx",
     visibleFiles: ["/index.ts"],
