@@ -83,7 +83,17 @@ type FileNames = "/App.tsx" | "/index.ts" | "/styles.css";
 ```
 
 ```ts
-export async function createSandpackOptions(props?) {
+// dirName can changed by user options
+// "base", "parent", "both"
+// default is "parent"
+// take a look "naming" option
+export const SPOptions_dirName = {
+  create: createSandpackOptions,
+};
+```
+
+```ts
+async function createSandpackOptions(props?) {
   const files = await getRawFiles();
 
   return {
