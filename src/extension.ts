@@ -1,6 +1,7 @@
 import * as vscode from "vscode";
 import { generate } from "./generate";
 import { PathState } from "./util/State";
+import { getConfig } from "./util/getConfig";
 
 export function activate(context: vscode.ExtensionContext) {
   const disposable = vscode.commands.registerCommand(
@@ -12,7 +13,8 @@ export function activate(context: vscode.ExtensionContext) {
       }
 
       try {
-        const pathState = new PathState(uri.fsPath);
+        const config = getConfig();
+        const pathState = new PathState(uri.fsPath, config.naming);
 
         const { fileNames, baseName } = await generate(pathState);
 

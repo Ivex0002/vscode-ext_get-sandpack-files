@@ -11,8 +11,14 @@ type StrictSandpackProps = Omit<SandpackProps, "options"> & {
   options?: StrictOptions;
 };`,
 
-  CREATE_SP_OPTIONS: `// create Sandpack options with auto complete
-export async function createSandpackOptions(
+  CREATE_SP_OPTIONS: (
+    dirName: string,
+  ) => `// create Sandpack options with auto complete
+export const SPOptions_${dirName} = {
+  create : createSandpackOptions
+}
+
+async function createSandpackOptions(
   props?: StrictSandpackProps,
 ): Promise<SandpackProps> {
   const files = await getRawFiles();

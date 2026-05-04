@@ -1,18 +1,19 @@
 {
   "name": "get-sandpack-files",
-  "displayName": "get-sandpack-files",
-  "description": "get raw files & file name union for sandpack",
-  "version": "0.0.1",
+  "displayName": "Get Sandpack Files",
+  "description": "get raw files & file name union for sandpack options",
+  "version": "0.1.1",
+  "publisher": "ivex0002",
   "engines": {
     "vscode": "^1.118.0"
   },
   "categories": [
     "Other"
   ],
+  "main": "./dist/extension.js",
   "activationEvents": [
     "onCommand:getSandpackFiles.generate"
   ],
-  "main": "./dist/extension.js",
   "contributes": {
     "commands": [
       {
@@ -20,6 +21,21 @@
         "title": "Generate Sandpack Files"
       }
     ],
+    "configuration": {
+      "title": "Get Sandpack Files",
+      "properties": {
+        "getSandpackFiles.naming": {
+          "type": "string",
+          "enum": [
+            "base",
+            "parent",
+            "both"
+          ],
+          "default": "parent",
+          "description": "Name source for generated Sandpack option obj"
+        }
+      }
+    },
     "menus": {
       "explorer/context": [
         {
