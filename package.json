@@ -7,6 +7,10 @@
   "engines": {
     "vscode": "^1.118.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Ivex0002/vscode-ext_get-sandpack-files"
+  },
   "categories": [
     "Other"
   ],

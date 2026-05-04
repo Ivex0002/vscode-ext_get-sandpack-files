@@ -222,3 +222,5 @@ This object is injected directly into Sandpack.
 ## License
 
 MIT
+
+[LICENSE](LICENSE)
