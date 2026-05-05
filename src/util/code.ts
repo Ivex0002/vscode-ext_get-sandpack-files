@@ -1,6 +1,6 @@
 export const CODE = {
   TYPE: `type StrictOptions = Omit<
-  SandpackProps["options"],
+  NonNullable<SandpackProps["options"]>,
   "activeFile" | "visibleFiles"
 > & {
   activeFile?: FileNames;
@@ -28,11 +28,12 @@ async function createSandpackOptions(
   };
 }`,
 
-  GET_RAW_FILES: `async function getRawFiles() {
+  GET_RAW_FILES: (baseName: string) => `async function getRawFiles() {
+  const ROOT = "./${baseName}";
   const files = {} as Record<FileNames, string>;
 
   for (const [path, loader] of Object.entries(modules)) {
-    const name = path.split("/").pop() as FileNames;
+    const name = path.slice(ROOT.length) as FileNames;
 
     files[name] = await loader();
   }

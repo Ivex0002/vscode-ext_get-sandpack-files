@@ -8,7 +8,7 @@ export async function generate(pathState: PathState) {
 
   const fileNames = await getFileNames(targetDir);
 
-  const source = makeSource(fileNames, globPath, dirName);
+  const source = makeSource(fileNames, globPath, dirName, baseName);
 
   await fs.writeFile(outputFile, source, "utf8");
 

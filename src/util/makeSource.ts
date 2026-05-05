@@ -6,6 +6,7 @@ export function makeSource(
   fileNames: string[],
   globPath: string,
   dirName: string,
+  baseName: string,
 ) {
   return `import { type SandpackProps } from "@codesandbox/sandpack-react";
 
@@ -21,7 +22,7 @@ const modules = import.meta.glob<string>(${JSON.stringify(globPath)}, {
   import: "default",
 });
 
-${GET_RAW_FILES}
+${GET_RAW_FILES(baseName)}
 `;
 }
 
