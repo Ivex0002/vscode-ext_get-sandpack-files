@@ -2,7 +2,7 @@
   "name": "get-sandpack-files",
   "displayName": "Get Sandpack Files",
   "description": "get raw files & file name union for sandpack options",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "publisher": "ivex0002",
   "engines": {
     "vscode": "^1.118.0"
