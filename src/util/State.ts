@@ -28,7 +28,7 @@ export class PathState {
   }
 
   get globPath() {
-    return `./${this.baseName}/*`;
+    return `./${this.baseName}/**/*`;
   }
 
   // exported obj name
