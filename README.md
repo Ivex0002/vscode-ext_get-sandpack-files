@@ -32,6 +32,10 @@ Install from VSCode Marketplace:
 
 or search: `get-sandpack-files`
 
+## Github repo
+
+[![Github:vscode-ext_get-sandpack-files](https://img.shields.io/badge/git-get--sandpack--files-blue)](https://github.com/Ivex0002/vscode-ext_get-sandpack-files)
+
 ## Why
 
 Using Sandpack often looks like this:
